@@ -1,34 +1,36 @@
 import "../../styles/admin.css"
 import { AdminSidebar } from "./AdminSidebar"
 import { Link, useLocation } from "react-router-dom";
-import data from "../../database/bigCards.json"
+import { useForm, SubmitHandler } from "react-hook-form"
+import data1 from "../../database/bigCards.json"
 import { useState, useEffect } from "react";
 import { Card } from '../../types';
 import { AdminCardCard } from './adminCardCard';
+import { FetchData } from "../../models/fetcher";
+import { useSWRConfig } from "swr";
+import { Expansion } from '../../types/types';
+import axios from "axios";
 
 export const CardDatabase = () => {
 
-    const card = useLocation().state as Card
+    const { mutate } = useSWRConfig();
+       
+    const {data, error, isLoading} = FetchData(`cards/`);
 
-    const [cards, setCards] = useState<Card[]>(data.bigCards)
+    const [cards, setCards] = useState<Card[]>(data.data);
 
-    useEffect(()=> {
-        if (card) {
-            AddTournament(card)
-        }
-    }, [])
-
-    const AddTournament = ({name, expansionId, colors}: Card) => {
-        const newCard = [...cards, 
+    const AddCard: SubmitHandler<Card> = async (newCard) => {
+        const data = [ 
             {
-                id: cards[cards.length-1].id + 1,
-                name: name,
-                image: "",
-                expansionId: expansionId,
-                colors: colors
+                name: newCard.name,
+                image: newCard.image,
+                expansionId: newCard.expansion.id,
+                colors: newCard.colors
             }
         ]
-        setCards(newCard)
+        await axios.put('http://localhost:4000/card', data);
+        mutate(`http://localhost:4000/cards/`);
+        
     }
 
     return (

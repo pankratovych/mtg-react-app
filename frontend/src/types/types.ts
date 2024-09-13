@@ -42,6 +42,6 @@ export interface Card {
     id: string;
     name: string;
     image: string;
-    expansionId: number;
+    expansion: Expansion;
     colors: Color[]
 }

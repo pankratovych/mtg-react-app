@@ -1,9 +1,29 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Color } from "../../types/"
+import { Card, Color } from "../../types/"
 import { AdminSidebar } from "./AdminSidebar"
+import { SubmitHandler, useForm } from "react-hook-form"
 
-export const AddCard = () => {
+export interface AddCardProps {
+    onSubmit: SubmitHandler<Card>
+}
+
+export const AddCard = ({onSubmit}: AddCardProps) => {
+
+    const {
+        register,
+        handleSubmit,
+        setValue,
+    } = useForm<Card>({
+        defaultValues: {
+            name: "",
+            image: "",
+            expansion: undefined,
+            colors: []
+        }
+    });
+
+
    
     const [name, setName] = useState<string>("")
 
@@ -55,6 +75,9 @@ export const AddCard = () => {
                     <p>ADD NEW CARD</p>
                 </div>
                 <div className="add-tour-cont">
+                    <form onSubmit={handleSubmit(onSubmit)}>  
+
+                    </form>
                     <div>
                         <div>
                             <p>Expansion:</p>
