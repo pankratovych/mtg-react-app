@@ -1,0 +1,39 @@
+{
+    "decks": [
+        {
+            "id": "1",
+            "name": "Golgari midrange",
+            "picture": "deck1.jpg",
+            "colors": [10, 50],
+            "formats": [61]
+        },
+        {
+            "id": "2",
+            "name": "MONO WHITE adjani wins",
+            "picture": "deck2.jpg",
+            "colors": [20],
+            "formats": [61]
+        },
+        {
+            "id": "3",
+            "name": "AZORIUS CONTROL",
+            "picture": "deck3.jpg",
+            "colors": [10, 40],
+            "formats": [61]
+        },
+        {
+            "id": "4",
+            "name": "Gruul ramp",
+            "picture": "deck4.jpg",
+            "colors": [30, 50],
+            "formats": [61]
+        },
+        {
+            "id": "5",
+            "name": "ESPER FRIENDS",
+            "picture": "deck5.jpg",
+            "colors": [10, 20, 40],
+            "formats": [61]
+        }
+    ]
+}

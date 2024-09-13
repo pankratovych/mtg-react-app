@@ -1,0 +1,130 @@
+{
+    "bigCards": [
+        {
+            "id": "1",
+            "name": "Depopulate",
+            "image": "card-main1.png",
+            "expansionId": 1,
+            "colors": [10]
+        },
+        {
+            "id": "2",
+            "name": "Elspeth",
+            "image": "card-main2.png",
+            "expansionId": 1,
+            "colors": [10]
+        },
+        {
+            "id": "3",
+            "name": "Hold for Ransom",
+            "image": "card-main3.png",
+            "expansionId": 1,
+            "colors": [10]
+        },
+        {
+            "id": "4",
+            "name": "Arcane Borbardment",
+            "image": "card-red1.png",
+            "expansionId": 1,
+            "colors": [40]
+        },
+        {
+            "id": "5",
+            "name": "Call In a Professional",
+            "image": "card-red2.png",
+            "expansionId": 1,
+            "colors": [40]
+        },
+        {
+            "id": "6",
+            "name": "Strangle",
+            "image": "card-red5.png",
+            "expansionId": 1,
+            "colors": [40]
+        },
+        {
+            "id": "7",
+            "name": "Broken Veteran",
+            "image": "card-blue1.png",
+            "expansionId": 1,
+            "colors": [20]
+        },
+        {
+            "id": "8",
+            "name": "Psionic Snoop",
+            "image": "card-blue4.png",
+            "expansionId": 1,
+            "colors": [20]
+        },
+        {
+            "id": "9",
+            "name": "Wingshield Agent",
+            "image": "card-blue6.png",
+            "expansionId": 1,
+            "colors": [20]
+        },
+        {
+            "id": "10",
+            "name": "Shakedown Heavy",
+            "image": "card-black5.png",
+            "expansionId": 1,
+            "colors": [30]
+        },
+        {
+            "id": "11",
+            "name": "Demon's Due",
+            "image": "card-black3.png",
+            "expansionId": 1,
+            "colors": [30]
+        },
+        {
+            "id": "12",
+            "name": "Deal Gone Bad",
+            "image": "card-black2.png",
+            "expansionId": 1,
+            "colors": [30]
+        },
+        {
+            "id": "13",
+            "name": "Cabaretti Initiate",
+            "image": "card-green1.png",
+            "expansionId": 1,
+            "colors": [50]
+        },
+        {
+            "id": "14",
+            "name": "For the family",
+            "image": "card-green2.png",
+            "expansionId": 1,
+            "colors": [50]
+        },
+        {
+            "id": "15",
+            "name": "High-Rise Sawjack",
+            "image": "card-green4.png",
+            "expansionId": 1,
+            "colors": [50]
+        },
+        {
+            "id": "16",
+            "name": "Ob Nixilis, the Adversary",
+            "image": "card-mult5.png",
+            "expansionId": 1,
+            "colors": [30, 40]
+        },
+        {
+            "id": "17",
+            "name": "Reveteers Ascendancy",
+            "image": "card-mult3.png",
+            "expansionId": 1,
+            "colors": [30, 40, 50]
+        },
+        {
+            "id": "18",
+            "name": "Jetmir, Nexus of Revels",
+            "image": "card-mult6.png",
+            "expansionId": 1,
+            "colors": [40, 50, 10]
+        }
+    ]
+}

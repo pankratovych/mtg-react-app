@@ -1,0 +1,119 @@
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+    /* Font family */
+    
+    --main-font: "spacemono-regular",sans-serif;
+    --main-font-bold: "spacemono-bold",sans-serif;
+    
+    --grad-bg: radial-gradient(50% 50% at 50% 50%,#5635ad 0%,#13094e 100%);
+    --color-bg-black: #0f042e;
+    --color-dark-blue: #14094f;
+    --color-dark-blue09: rgba(20,9,79,0.9);
+    --color-magnolia: #f7ecff;
+    --color-border-text: #ffb4a1;
+    --color-wild-watermelon: #fe507c;
+}
+
+body {
+    margin: 0 auto;
+    font-family: var(--main-font);
+    background: var(--grad-bg);
+    color: var(--color-magnolia);
+    overflow-x: hidden;
+    
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+   
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/header-banner.png");
+
+    /* Set a specific height */
+    height: 50%;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 100px 0;
+}
+  
+.hero__text {
+    width: 60%;
+    font-size: 2rem;
+    padding: 100px 0;
+}
+  
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 3em;
+    line-height: 1.6;
+    opacity: 0.75;
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+}
+
+.info-container {
+    margin: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.row-register {
+      display: flex;
+      flex:50%;
+}
+
+.section__tournament--pic1 {
+    max-width: 50%;
+   
+}
+
+.section_tournament {
+      justify-content: space-around;
+      padding: 2em;
+}
+.section__tournament--text {
+      width: 50%;
+      margin-left: 1.5em;
+}
+.section__tournament--text--h2 {
+      font-size: 1rem;
+}
+.section__tournament--text--p {
+    font-size: .75rem;
+}
+
+.register-btn {
+    display: inline-block;
+    padding: 0.75em 0.85em;
+    border-radius: 5px;
+    border: 1px solid #ffb4a1;
+    background: var(--color-bg-black);
+    color: var(--color-magnolia);
+    font-weight: bold;
+    font-size: .75rem;
+}
+
+.register-btn:hover {
+    transition: .5s ease-in-out;
+    background-color: var(--color-wild-watermelon);
+    color: #0f042e;
+}

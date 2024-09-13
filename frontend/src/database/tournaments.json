@@ -1,0 +1,44 @@
+{
+    "tournaments": [
+        {
+            "id": "1",
+            "name": "STREETS OF NEW CAPENNA COMMANDER LAUNCH PARTY",
+            "date": "7-18 MAY 2022",
+            "formats": [61],
+            "type": "Tabletop",
+            "size": 64,
+            "description": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.",
+            "image": "pic1.png"
+        },
+        {
+            "id": "2",
+            "name": "MTG PRO TOUR",
+            "date": "7-18 JUNE 2022",
+            "formats": [61],
+            "type": "Tabletop",
+            "size": 32,
+            "description": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.",
+            "image": "pic2.png"
+        },
+        {
+            "id": "3",
+            "name": "PRERELEASE MIRRODIN",
+            "date": "7-18 AUGUST 2022",
+            "formats": [61],
+            "type": "Online",
+            "size": 128,
+            "description": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.",
+            "image": "pic3.png"
+        },
+        {
+            "id": "4",
+            "name": "LEGACY CUBE DRAFT",
+            "date": "7-18 JUNE 2022",
+            "formats": [61],
+            "type": "Draft",
+            "size": 8,
+            "description": "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum. Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum.",
+            "image": "pic4.png"
+        }
+    ]
+}

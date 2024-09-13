@@ -1,0 +1,157 @@
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+    /* Font family */
+
+    --main-font: "spacemono-regular",sans-serif;
+    --main-font-bold: "spacemono-bold",sans-serif;
+}
+
+
+.sidebar-body {
+    font-family: var(--main-font);
+    color: var(--color-magnolia);
+    overflow-x: hidden;
+    width: 300px;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar-links-block{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.sidebar-bar {
+    margin-top: 150px;
+}
+
+.sidebar-links {
+    margin-top: 10px;
+    color: inherit; text-decoration: inherit
+}
+
+.admin {
+    display: flex;
+    background-color: white;
+    color: black;
+    min-height: 100vh;
+    min-width: 18rem;
+    overflow: hidden;
+}
+
+.admin__tournament--text {
+    margin-top: 40px;
+    width: 100%;
+    margin-left: 1.5em;
+}
+
+.admin__card--text {
+    margin-top: 40px;
+    width: 100%;
+    margin-left: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 60%;
+    align-items: center;
+}
+
+.tour-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 1200px;
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 62%;
+}
+
+.txt {
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.main-window-main-channel{
+    margin: 40px;
+    min-width: 1200px;
+}
+
+.add-tour-cont{
+    width: 500px;
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-tour-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.add-tour-pic {
+    width: 100%;
+}
+
+.add-tour-desc {
+    width: 100%;
+    height: 70px;
+}
+
+.add-tour-btn {
+    width: 32%;
+    margin-top: 4em;
+    padding: 1em 2.75em;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.admin-cards{
+    display: flex;
+    flex-direction: column;
+}
+
+.colors {
+    display: flex;
+    flex-direction: row;
+}
+
+.color {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 50px;
+}
+.section__tournament--text--h2{
+    min-width: 50%;
+}
+
+.add-card-btn {
+    display: inline-block;
+    padding: 0.75em 0.85em;
+    border-radius: 5px;
+    border: 1px solid #ffb4a1;
+    background: var(--color-bg-black);
+    color: var(--color-magnolia);
+    font-weight: bold;
+    font-size: .75rem;
+    margin-left: 100px;
+}

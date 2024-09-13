@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "Shakedown Heavy",
+            "image": "card-black5.png",
+            "quantity": 1
+        },
+        {
+            "id": "2",
+            "name": "Ob Nixilis",
+            "image": "card-mult5.png",
+            "quantity": 2
+        },
+        {
+            "id": "3",
+            "name": "Riveteers Ascendancy",
+            "image": "card-mult3.png",
+            "quantity": 4
+        }
+    ]
+}

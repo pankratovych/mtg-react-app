@@ -1,0 +1,125 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+  name String
+  password String
+  image String?
+
+  tournaments UserTournament[]
+}
+
+model Expansion {
+  id String @id @default(uuid())
+  name String
+  shortName String
+  image String?
+
+  cards Card[]
+  rules ExpansionRules[]
+}
+
+model Card {
+  id String @id @default(uuid())
+  name String
+  image String
+  colors Color[]
+  expanssionId String
+  decks DeckCard[]
+
+  expansion Expansion @relation(fields: [expanssionId], references: [id])
+}
+
+model Deck {
+    id String @id @default(uuid())
+    name String
+    iamge String?
+    colors Color[]
+    formats GameFormat[]
+    cards DeckCard[]
+
+}
+
+model DeckCard {
+    id String @id @default(uuid())
+    cardId String
+    deckId String
+
+    card Card @relation(fields: [cardId], references: [id])
+    deck Deck @relation(fields: [deckId], references: [id])
+}
+
+model Tournament {
+    id String @id @default(uuid())
+    name String
+    date DateTime?
+    formats GameFormat[]
+    size Int
+    description String?
+    image String?
+    
+    rules TournamentRules[] 
+    participants UserTournament[]
+}
+
+model Rules {
+  id String @id @default(uuid())
+  name String
+  deckSize Int
+
+  tournaments TournamentRules[]
+  expansions ExpansionRules[]
+}
+
+model UserTournament {
+  id String @id @default(uuid())
+  userId String
+  tournamentId String
+
+  users User @relation(fields: [userId], references: [id])
+  tournaments Tournament @relation(fields: [tournamentId], references: [id])
+}
+
+model TournamentRules {
+  id String @id @default(uuid())
+  tournamentId String
+  rulesId String
+
+  tournaments Tournament @relation(fields: [tournamentId], references: [id])
+  rules Rules @relation(fields: [rulesId], references: [id])
+}
+
+model ExpansionRules {
+  id String @id @default(uuid())
+  expansionId String
+  rulesId String
+
+  expansion Expansion @relation(fields: [expansionId], references: [id])
+  rules Rules @relation(fields: [rulesId], references: [id])
+
+}
+
+enum Color {
+  WHITE
+  BLUE
+  BLACK
+  RED
+  GREEN
+}
+
+enum GameFormat {
+  LEGACY
+  STANDART
+  MODERN
+  COMMANDER
+}

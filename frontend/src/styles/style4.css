@@ -1,0 +1,72 @@
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  
+}
+
+:root {
+    /* Font family */
+    
+    --main-font: "spacemono-regular",sans-serif;
+    --main-font-bold: "spacemono-bold",sans-serif;
+    
+    --grad-bg: radial-gradient(50% 50% at 50% 50%,#5635ad 0%,#13094e 100%);
+    --color-bg-black: #0f042e;
+    --color-dark-blue: #14094f;
+    --color-dark-blue09: rgba(20,9,79,0.9);
+    --color-magnolia: #f7ecff;
+    --color-border-text: #ffb4a1;
+    --color-wild-watermelon: #fe507c;
+}
+
+body {
+    margin: 0 auto;
+    font-family: var(--main-font);
+    background: var(--grad-bg);
+    color: var(--color-magnolia);
+    overflow-x: hidden;
+   
+    
+}
+
+.container-submit {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../public/header-banner.png");
+
+    /* Set a specific height */
+    height: 50%;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 100px 0;
+}
+
+.container-cntr {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.text {
+    width: 60%;
+    padding: 50px 0;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.summary {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+.name-trn span,
+.date-place span,
+.name-deck span {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
