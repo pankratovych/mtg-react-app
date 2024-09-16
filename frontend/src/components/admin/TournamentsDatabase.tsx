@@ -16,7 +16,7 @@ export const TournamentsDatabase = () => {
         if (tour) {
             AddTournament(tour)
         }
-    }, [])
+    })
 
     const AddTournament = ({name, date, formats, type, size, description, image}: Tournament) => {
         const newTournaments = [...tournaments, 

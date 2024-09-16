@@ -19,7 +19,10 @@ export const Header = ({nickname}: IheaderProps) => {
                 </li>
             </ul>
             <Link to={`/`} className="logo">
-                <img src="https://images.ctfassets.net/s5n2t79q9icq/3dB5uyWzUH95O1ZPBNNUX5/6cff7c65a809285755ea24b164b6ac65/magic-logo.png?fm=webp"/>
+                <img 
+                    src="https://images.ctfassets.net/s5n2t79q9icq/3dB5uyWzUH95O1ZPBNNUX5/6cff7c65a809285755ea24b164b6ac65/magic-logo.png?fm=webp"
+                    alt="MTG logo"
+                />
             </Link>
         </div>
     </header>  

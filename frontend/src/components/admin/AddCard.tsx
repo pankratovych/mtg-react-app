@@ -3,12 +3,24 @@ import { Link } from "react-router-dom"
 import { Card, Color } from "../../types/"
 import { AdminSidebar } from "./AdminSidebar"
 import { SubmitHandler, useForm } from "react-hook-form"
+import axios from "axios"
 
-export interface AddCardProps {
-    onSubmit: SubmitHandler<Card>
-}
 
-export const AddCard = ({onSubmit}: AddCardProps) => {
+export const AddCard = () => {
+
+    const onSubmit: SubmitHandler<Card> = async (newCard) => {
+        const data = [ 
+            {
+                name: newCard.name,
+                image: newCard.image,
+                expansionId: newCard.expansion.id,
+                colors: newCard.colors
+            }
+        ]
+        await axios.put('http://localhost:4000/card', data);
+        
+    }
+
 
     const {
         register,
@@ -75,12 +87,14 @@ export const AddCard = ({onSubmit}: AddCardProps) => {
                     <p>ADD NEW CARD</p>
                 </div>
                 <div className="add-tour-cont">
-                    <form onSubmit={handleSubmit(onSubmit)}>  
-
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <p>Expansion:</p>  
+                        <select></select>
+                        
                     </form>
                     <div>
                         <div>
-                            <p>Expansion:</p>
+                            
                             <input value={expansion} onChange={changeNumber}></input>
                         </div>
                     </div>

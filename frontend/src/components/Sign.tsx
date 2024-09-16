@@ -22,7 +22,7 @@ export const Sign = () => {
                     <input type="password"></input>
                 </div>
                 <div className="btn">
-                    <Link to={login == "admin" ? "/admin-tournaments" : "/" } state={login == "admin" ? null : "user" } className="submit-btn">Login</Link>
+                    <Link to={login === "admin" ? "/admin-tournaments" : "/" } state={login === "admin" ? null : "user" } className="submit-btn">Login</Link>
                 </div>
             </div>
         </div>

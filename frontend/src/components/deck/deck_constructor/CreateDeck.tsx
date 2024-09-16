@@ -5,10 +5,10 @@ import { Footer } from "../../Footer"
 import { Header } from "../../Header"
 import { DeckConstSidebar} from './DeckConstrSidebar';
 import { Card, Color } from '../../../types';
-import { CardFull } from '../../card/CardFull';
 import { IcardSmall } from '../../card/CardSmall';
 import { sumColors } from "../../../misc/utils"
 import { FetchData } from "../../../models/fetcher"
+import CreateDeckMain from "./CreateDeckCards"
 
 interface IfilterProps {
     color: Color, 
@@ -60,14 +60,6 @@ export const CreateDeck = () => {
     ]
 
     const [filters, setFilter] = useState<IfilterProps[]>(filterStatus)
-
-    const {data, error, isLoading} = FetchData('cards/')
-
-    console.log(data.data)
-
-    const cardsDataBase: Card[] = data.data
-
-    const [cards, setCards] = useState<Card[]>(cardsDataBase)
 
     const [inDeckCards, setInDeckCards] = useState<IcardSmall[] | null>(null)
 
@@ -141,13 +133,9 @@ export const CreateDeck = () => {
         }
     }
 
-    if (isLoading) {
-        return (
-            <Fragment>
-                <p>Loading...</p>
-            </Fragment>
-        )
-    }
+    const {data, error} = FetchData('cards/')
+
+    if (!data) return <>loading...</>;
 
     if (error) {
         return (
@@ -156,6 +144,8 @@ export const CreateDeck = () => {
             </Fragment>
         )
     }
+
+    const cards: Card[] = data.data
 
     return (
         <div>
@@ -166,46 +156,11 @@ export const CreateDeck = () => {
             </div>
             <div className="container-deck-create">
                 <div className="main-block">
-                    <div className="deck-container">
-                        <div className="left-side">   
-                            <form action="#" className="filter-cards">
-                                <input className="filter-event" type="text" placeholder="Card name..." />
-                                <input className="filter-event" type="text" placeholder="Card type..." />
-                                <Select className="filter-event selector" options={expansions} />   
-                            </form>
-                        </div>
-                        <div className="colors-form">
-                            <div className="colors-block">
-                                <div>
-                                    <input className="filters" type="checkbox"  name="digEvent" onClick={() => changeFilter(30)}/>
-                                    <label>Red</label>
-                                </div>
-                                <div>
-                                    <input className="filters" type="checkbox" id="liveEvent" name="liveEvent" value="Live" onClick={() => changeFilter(40)} />
-                                    <label>Blue</label>
-                                </div>
-                                <div>
-                                    <input className="filters" type="checkbox" id="digEvent" name="digEvent" onClick={() => changeFilter(10)} />
-                                    <label>Black</label>
-                                </div>
-                                <div>
-                                    <input className="filters" type="checkbox" id="liveEvent" name="liveEvent" value="Live" onClick={() => changeFilter(20)} />
-                                    <label>White</label>
-                                </div>
-                                <div>
-                                    <input className="filters" type="checkbox" id="liveEvent" name="liveEvent" value="Live" onClick={() => changeFilter(50)}/>
-                                    <label>Green</label>
-                                </div>
-                                <div className="btn">
-                                    <button className="filter-btn" onClick={() => filterCards()}>FILTER</button>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                <div className="cards-main-block">
+                    
+                <CreateDeckMain cards={cards} addCardToDeck={addCardToDeck}/>    
+                {/* <div className="cards-main-block">
                     {cards.map((card) => <CardFull key={card.id} card={card} onAction={addCardToDeck}/>)} 
-                </div>
+                </div> */}
 
                 </div>
                 <DeckConstSidebar cards={inDeckCards} removeCardFromDeck={removeCardFromDeck} />

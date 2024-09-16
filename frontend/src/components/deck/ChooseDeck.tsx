@@ -6,7 +6,6 @@ import { Header } from "../Header";
 import { Footer } from "../Footer";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { Tournaments } from '../tournaments/Tournaments';
 export const ChooseDeck = () => {
     
     const isAdded = useLocation().state as boolean

@@ -1,37 +1,30 @@
 import "../../styles/admin.css"
 import { AdminSidebar } from "./AdminSidebar"
-import { Link, useLocation } from "react-router-dom";
-import { useForm, SubmitHandler } from "react-hook-form"
-import data1 from "../../database/bigCards.json"
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useState, Fragment } from "react";
 import { Card } from '../../types';
 import { AdminCardCard } from './adminCardCard';
 import { FetchData } from "../../models/fetcher";
-import { useSWRConfig } from "swr";
-import { Expansion } from '../../types/types';
-import axios from "axios";
 
 export const CardDatabase = () => {
-
-    const { mutate } = useSWRConfig();
        
-    const {data, error, isLoading} = FetchData(`cards/`);
+    const {data, error} = FetchData(`cards/`);
+    
+    const [cards, setCards] = useState<Card[]>([]);
 
-    const [cards, setCards] = useState<Card[]>(data.data);
+    if (!data) return <div>Loading...</div>
 
-    const AddCard: SubmitHandler<Card> = async (newCard) => {
-        const data = [ 
-            {
-                name: newCard.name,
-                image: newCard.image,
-                expansionId: newCard.expansion.id,
-                colors: newCard.colors
-            }
-        ]
-        await axios.put('http://localhost:4000/card', data);
-        mutate(`http://localhost:4000/cards/`);
-        
+    if (data) setCards(data.data)
+    
+    if (error) {
+        return (
+            <Fragment>
+                Error!
+            </Fragment>
+        )
     }
+
+
 
     return (
         <div className="admin">

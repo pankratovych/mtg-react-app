@@ -7,18 +7,18 @@ export const Footer = () => {
         <footer>
             <div className="footer">
                 <div className="row">
-                    <a href="#"><i><FontAwesomeIcon icon={faFacebookF} /></i></a>
-                    <a href="#"><i><FontAwesomeIcon icon={faTwitch} /></i></a>
-                    <a href="#"><i><FontAwesomeIcon icon={faYoutube} /></i></a>
-                    <a href="#"><i><FontAwesomeIcon icon={faTwitter} /></i></a>
+                    <a href="/"><i><FontAwesomeIcon icon={faFacebookF} /></i></a>
+                    <a href="/"><i><FontAwesomeIcon icon={faTwitch} /></i></a>
+                    <a href="/"><i><FontAwesomeIcon icon={faYoutube} /></i></a>
+                    <a href="/"><i><FontAwesomeIcon icon={faTwitter} /></i></a>
                 </div>
                 <div className="row">
                     <ul>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">Career</a></li>
+                        <li><a href="/">Contact us</a></li>
+                        <li><a href="/">Our Services</a></li>
+                        <li><a href="/">Privacy Policy</a></li>
+                        <li><a href="/">Terms &amp; Conditions</a></li>
+                        <li><a href="/">Career</a></li>
                     </ul>
                 </div>
                 <div className="row">
