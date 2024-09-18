@@ -2,42 +2,43 @@ import prisma from '../client';
 import { Request, Response } from 'express';
 
 /**
- * Return list of all cards
+ * Return list of all expansion
  */
-export const getAllCards = async (req: Request, res: Response) => {
-    const cards = await prisma.card.findMany({
+export const getAllExpansions = async (req: Request, res: Response) => {
+    const expansions = await prisma.expansion.findMany({
       select: {
         id: true,
         name: true,
-        image: true,
-        colors: true,
+        shortName: true,
+        image: true
       },
     });
     return res.send({
       status: 'success',
-      data: cards,
+      data: expansions,
     });
 };
 
 /**
- * Return one card
+ * Return one expansion
  */
  export const get = async (req: Request, res: Response) => {
     const id = req.params.id!;
 
-    const card = await prisma.card.findUnique({
+    const expansion = await prisma.expansion.findUnique({
         where: {
             id,
         },
         select: {
             id: true,
             name: true,
-            image: true,
+            shortName: true,
+            image: true
         }     
     });
     return res.send({
         status: 'success',
-        data: card,
+        data: expansion,
     });
 };
 

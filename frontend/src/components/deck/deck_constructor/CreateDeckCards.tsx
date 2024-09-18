@@ -12,16 +12,21 @@ interface CreateDeckCardsProps {
 
 interface CreateDeckCardsState {
     isFiltered: boolean
+    filteredCards: Card[]
 }
 
 export default class CreateDeckMain extends React.Component<CreateDeckCardsProps, CreateDeckCardsState> {
     constructor(props: CreateDeckCardsProps) {
         super(props)
         this.state = {
-            isFiltered: false
+            isFiltered: false,
+            filteredCards: this.props.cards
         }
     }
 
+    private filterCardsByColor(cards: Card[]){
+        this.setState({ filteredCards: cards})
+    }
 
     render () {
         return (

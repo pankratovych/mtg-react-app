@@ -1,5 +1,5 @@
 import express from "express";
-import { card } from "./data";
+import { card, expansion } from "./data";
 import cors from "cors";
 
 const api = express();
@@ -17,6 +17,7 @@ api.use(cors());
  api.get("/cards/", card.getAllCards);
 // api.get("/products/:catId", product.getByCategory);
 
+api.get("/expansions/", expansion.getAllExpansions);
 // api.post("/order/:id", order.store);
 
 api.listen(port, () => console.log(`Example app listening on port ${port}`));

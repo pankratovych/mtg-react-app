@@ -83,11 +83,7 @@ export const CreateDeck = () => {
         setFilter([...newFilters, newColorStatus])
     }
 
-    const filterCards = () => {
-        let newCards: Card[] = cardsDataBase
-        filters.forEach((color) => color.status ? newCards = newCards.filter((card) => card.colors.includes(color.color)) : null)
-        setCards(newCards)
-    }
+
 
     const addCardToDeck = (card: Card) => {
         if (inDeckCards) {

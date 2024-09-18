@@ -36,6 +36,7 @@ export interface Expansion {
     id: number;
     name: string;
     shortName: string;
+    image: string;
 }
 
 export interface Card {
